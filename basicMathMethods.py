@@ -96,3 +96,25 @@ def convert_fahrenheit(temp_a):
 
 # tests the above method
 convert_fahrenheit(98.6)
+
+
+# method for calculating the quadratic formula roots. form: ax**2 + bx + c = 0
+def quadratic_formula_calc(a_quad, b_quad, c_quad):
+    # The Quadratic formula roots are
+    # x1 = (-b_quad + (b_quad**2 - 4 * a_quad * c_quad)**0.5) / 2 * a_quad
+    # x1 = (-b_quad - (b_quad**2 - 4 * a_quad * c_quad)**0.5) / 2 * a_quad
+    # can write a smaller version by letting d = (b_quad**2 - 4 * a_quad * c_quad)**0.5
+    # first, calculate d.
+    d_quad = (b_quad**2 - 4 * a_quad * c_quad)**0.5
+    # then calculate each root.
+    x1_quad = (-1 * b_quad + d_quad) / 2 * a_quad
+    x2_quad = (-1 * b_quad - d_quad) / 2 * a_quad
+    # print results
+    print("The roots are: {0} and {1}".format(x1_quad, x2_quad))
+
+
+# tests out method above for "real" roots.
+quadratic_formula_calc(1, 2, 1)
+
+# tests out method above for "imaginary" roots.
+quadratic_formula_calc(1, 1, 1)
